@@ -1,27 +1,36 @@
 # ai-gateway
 Lightweight AI Gateway with Enterprise LLM controls
 # Project Structure
-openai-gateway/
-├── cmd/
-│   └── server/
-│       └── main.go          # Entry point for starting the HTTP server
-├── config/
-│   └── config.go            # Configuration setup (e.g., env variables, API keys)
-├── internal/
-│   ├── handlers/
-│   │   └── openai_handler.go # HTTP handler logic for OpenAI-related endpoints
-│   ├── services/
-│   │   └── openai_service.go # Business logic for interacting with OpenAI API
-│   ├── models/
-│   │   └── request.go       # Structs for request payloads
-│   │   └── response.go      # Structs for response payloads
-├── pkg/
-│   └── httpclient/
-│       └── client.go        # Reusable HTTP client wrapper
-├── test/
-│   └── handlers_test.go     # Unit tests for handlers
-│   └── services_test.go     # Unit tests for services
-├── go.mod                   # Dependency management
-├── go.sum                   # Checksums for dependencies
-├── Makefile                 # Makefile for automating tasks like build/test/run
-├── README.md                # Project description and setup instructions
+
+## Folder Structure
+- **`cmd/server/`**:
+  - Contains `main.go`, which is the entry point for the application.
+  - This is where you initialize routes and start the server.
+
+- **`config/`**:
+  - Manages application-level configuration, such as environment variables and API keys.
+
+- **`internal/`**:
+  - Core application logic is organized here:
+    - **`handlers/`**: Defines HTTP handler functions for handling API endpoints.
+    - **`services/`**: Implements business logic and communicates with OpenAI API.
+    - **`models/`**: Structures for request/response payloads used by handlers and services.
+
+- **`pkg/httpclient/`**:
+  - Contains reusable utilities for making HTTP requests.
+
+- **`test/`**:
+  - Unit tests for handlers and services to ensure functionality.
+
+- **`go.mod` & `go.sum`**:
+  - Dependency and version management for the Go project.
+
+- **`Makefile`**:
+  - Automates tasks like building, testing, and running the application.
+
+- **`README.md`**:
+  - Provides a comprehensive guide for setting up, running, and understanding the project.
+
+---
+
+This structure is modular, scalable, and adheres to Go best practices. Feel free to tweak it based on your specific requirements!
